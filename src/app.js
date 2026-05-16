@@ -131,7 +131,8 @@ const translations = {
         astro_hor_next: "Тепер підніміть телефон вгору (на висоту вашої широти) для пошуку зірок.",
         lbl_meters_short: "м",
         cal_done: "КАЛІБР: ГОТОВО",
-        alert_no_gps_cal: "Немає сигналу GPS!"
+        alert_no_gps_cal: "Немає сигналу GPS!",
+        voice_on_test: "Голосовий супровід активовано."
     },
     'en': {
         btn_login: "START", err_access_denied: "❌ ACCESS DENIED", title_qr_scan: "OPTICAL DATA CODE", btn_close: "CLOSE", menu_day_night: "☀️ DAY / 🔴 NIGHT", menu_map: "📍 ROUTE / MAP", menu_compass: "🧭 COMPASS / GUIDE", menu_astro: "🌌 ASTRO / NO GPS", menu_optics: "👁 OPTICS / AI", menu_radio: "💬 TEXT / QR RADIO", menu_shield: "🛡 SECURITY / SHIELD", menu_manual: "📖 INSTRUCTIONS", menu_power_off: "🛑 SHUTDOWN APP", menu_destroy: "💥 DESTROY DATA", menu_sos: "🆘 SOS / BEACON",
@@ -149,7 +150,7 @@ const translations = {
         man_title: "COMBAT MANUAL", man_h1: "🔐 1. SYSTEM LOGIN", man_p1: "Press Start.", man_h2: "📍 2. ROUTE / MAP", man_p2: "Double tap to set target. Use 'I AM HERE' to manually set location.", man_h3: "🧭 3. COMPASS / GUIDE", man_p3: "Use pedometer for offline tracking. Vibro-guide will point you to the target.", man_h4: "🌌 4. ASTRO / NO GPS", man_p4: "Calibrate horizon, then look up to lock Polaris or the Sun in crosshair to fix compass.", man_h5: "👁 5. OPTICS / AI", man_p5: "Use IR filter in low light. AI Scan detects vehicles and personnel.", man_h6: "💬 6. TEXT / QR-RADIO", man_p6: "Share encrypted messages via QR codes.", man_h7: "🛡 7. SECURITY / SHIELD", man_p7: "Put phone on bag. Any vibration triggers the alarm.", man_h8: "🆘 8. SOS / BEACON", man_p8: "Activate SOS to flash screen and emit a 3-second beacon tone.",
         eco_touch: "TOUCH SCREEN<br>(3 sec)", btn_eco_exit: "EXIT BLACKOUT", wiz_title: "OFFLINE MODE", wiz_text: "Hint text", btn_wiz_cancel: "CANCEL", btn_wiz_next: "NEXT ➡",
         lvl3: "LEVEL 3: AUTONOMOUS", lvl2: "LEVEL 2: STEALTH (GPS)", lvl1: "LEVEL 1: MAX (RADIO TRACE)", gps_delay: "⚠️ GPS DELAY", gps_manual: "📍 MANUAL MODE", gps_lost: "❌ GPS JAMMED (>200m)", gps_ok: "GPS: OK", gps_offline: "❌ GPS LOST (OFFLINE)",
-        voice_dist: "Distance", voice_meters: "meters", voice_turn: "Turn around!", voice_right: "More to the right.", voice_left: "More to the left.", alert_no_start: "Warning: No start point set.", alert_pedo_on: "✅ AUTONOMOUS NAVIGATION ON!", alert_pedo_off: "Offline tracking stopped.", alert_man_pos: "📍 MANUAL MODE:\nTap the map where you are.", astro_sun_fix: "☀️ Sun locked!", astro_star_fix: "⭐ Star locked!", astro_hor_fix: "⚖️ Horizon locked", astro_hor_next: "Now lift the phone up to search for stars.", lbl_meters_short: "m", cal_done: "CAL: DONE", alert_no_gps_cal: "No GPS signal!"
+        voice_dist: "Distance", voice_meters: "meters", voice_turn: "Turn around!", voice_right: "More to the right.", voice_left: "More to the left.", alert_no_start: "Warning: No start point set.", alert_pedo_on: "✅ AUTONOMOUS NAVIGATION ON!", alert_pedo_off: "Offline tracking stopped.", alert_man_pos: "📍 MANUAL MODE:\nTap the map where you are.", astro_sun_fix: "☀️ Sun locked!", astro_star_fix: "⭐ Star locked!", astro_hor_fix: "⚖️ Horizon locked", astro_hor_next: "Now lift the phone up to search for stars.", lbl_meters_short: "m", cal_done: "CAL: DONE", alert_no_gps_cal: "No GPS signal!", voice_on_test: "Voice guidance activated."
     },
     'pt': {
         btn_login: "INICIAR", err_access_denied: "❌ ACESSO NEGADO", title_qr_scan: "CÓDIGO DE DADOS", btn_close: "FECHAR", menu_day_night: "☀️ DIA / 🔴 NOITE", menu_map: "📍 ROTA / MAPA", menu_compass: "🧭 BÚSSOLA / GUIA", menu_astro: "🌌 ASTRO / SEM GPS", menu_optics: "👁 ÓPTICA / IA", menu_radio: "💬 TEXTO / RÁDIO QR", menu_shield: "🛡 SEGURANÇA / ESCUDO", menu_manual: "📖 INSTRUÇÕES", menu_power_off: "🛑 DESLIGAR APP", menu_destroy: "💥 DESTRUIR DADOS", menu_sos: "🆘 SOS / SINALIZADOR",
@@ -167,7 +168,7 @@ const translations = {
         man_title: "MANUAL DE COMBATE", man_h1: "🔐 1. LOGIN", man_p1: "Pressione INICIAR.", man_h2: "📍 2. ROTA / MAPA", man_p2: "Toque duplo define alvo.", man_h3: "🧭 3. BÚSSOLA", man_p3: "Pedômetro offline.", man_h4: "🌌 4. ASTRO", man_p4: "Calibre horizonte, mire na Estrela no centro.", man_h5: "👁 5. ÓPTICA", man_p5: "Filtro IR.", man_h6: "💬 6. RÁDIO QR", man_p6: "QR encriptado.", man_h7: "🛡 7. ESCUDO", man_p7: "Alarme de movimento.", man_h8: "🆘 8. SOS", man_p8: "Som e flash.",
         eco_touch: "TOQUE NA TELA<br>(3 seg)", btn_eco_exit: "SAIR DO BLACKOUT", wiz_title: "MODO OFFLINE", wiz_text: "Texto", btn_wiz_cancel: "CANCELAR", btn_wiz_next: "PRÓXIMO ➡",
         lvl3: "NÍVEL 3: AUTÔNOMO", lvl2: "NÍVEL 2: FURTIVO (GPS)", lvl1: "NÍVEL 1: MÁX", gps_delay: "⚠️ ATRASO GPS", gps_manual: "📍 MODO MANUAL", gps_lost: "❌ GPS BLOQUEADO", gps_ok: "GPS: OK", gps_offline: "❌ GPS PERDIDO",
-        voice_dist: "Distância", voice_meters: "metros", voice_turn: "Vire-se!", voice_right: "Para a direita.", voice_left: "Para a esquerda.", alert_no_start: "Aviso: Sem ponto.", alert_pedo_on: "✅ NAVEGAÇÃO LIGADA!", alert_pedo_off: "Parado.", alert_man_pos: "📍 MANUAL:\nToque no mapa.", astro_sun_fix: "☀️ Sol fixado!", astro_star_fix: "⭐ Estrela fixada!", astro_hor_fix: "⚖️ Horizonte fixado", astro_hor_next: "Levante o telefone.", lbl_meters_short: "m", cal_done: "CAL: PRONTO", alert_no_gps_cal: "Sem sinal GPS!"
+        voice_dist: "Distância", voice_meters: "metros", voice_turn: "Vire-se!", voice_right: "Para a direita.", voice_left: "Para a esquerda.", alert_no_start: "Aviso: Sem ponto.", alert_pedo_on: "✅ NAVEGAÇÃO LIGADA!", alert_pedo_off: "Parado.", alert_man_pos: "📍 MANUAL:\nToque no mapa.", astro_sun_fix: "☀️ Sol fixado!", astro_star_fix: "⭐ Estrela fixada!", astro_hor_fix: "⚖️ Horizonte fixado", astro_hor_next: "Levante o telefone.", lbl_meters_short: "m", cal_done: "CAL: PRONTO", alert_no_gps_cal: "Sem sinal GPS!", voice_on_test: "Guia de voz ativado."
     }
 };
 
@@ -206,10 +207,10 @@ function toggleNightMode() {
 async function startSystem() {
     document.getElementById('pin-screen').style.display = 'none';
     
-    // Ініціалізація голосового синтезатора (потрібен клік користувача)
+    // Ініціалізація голосового синтезатора після першого кліку
     if ('speechSynthesis' in window) {
         let msg = new SpeechSynthesisUtterance(" ");
-        msg.volume = 0;
+        msg.volume = 0.01; // Трохи звуку для ініціалізації
         window.speechSynthesis.speak(msg);
     }
 
@@ -347,11 +348,12 @@ function playSystemTone(freq, duration) {
 }
 
 function speakText(text) {
-    if (!isVoiceEnabled || !('speechSynthesis' in window)) return;
+    if (!('speechSynthesis' in window)) return;
     window.speechSynthesis.cancel(); 
-    const utterance = new SpeechSynthesisUtterance(text);
-    if (currentLang === 'en') utterance.lang = 'en-US'; else if (currentLang === 'pt') utterance.lang = 'pt-PT'; else utterance.lang = 'uk-UA';
-    utterance.rate = 1.1; 
+    let utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = currentLang === 'uk' ? 'uk-UA' : (currentLang === 'pt' ? 'pt-PT' : 'en-US');
+    utterance.rate = 1.0; 
+    utterance.volume = 1.0;
     window.speechSynthesis.speak(utterance);
 }
 
@@ -436,7 +438,6 @@ function toggleMapMenu() {
 function initMap() {
     if (typeof L === 'undefined') return;
     try {
-        // ВИПРАВЛЕНО: Мапа гугл переведена на HTTPS
         topoLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', { maxZoom: 20 });
         darkLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19 });
         map = L.map('map-container', { zoomControl: false, doubleClickZoom: false }).setView([49.0, 31.0], 6);
@@ -805,19 +806,56 @@ function initGPS() {
     }
 }
 
-// --- ДОДАНО ЛОГІКУ ПІНПОІНТЕРА ---
+// --- НОВИЙ АЛГОРИТМ МЕТАЛОШУКАЧА ---
 let pinpointerActive = false;
 let lastAlphaForMag = null;
 let anomalyScore = 0;
 let magSensor = null;
 let baselineMag = null;
+let isFallbackMag = false;
+
+function zeroPinpointer() {
+    baselineMag = null;
+    anomalyScore = 0;
+    if(navigator.vibrate) navigator.vibrate(50);
+}
+
+function updatePinpointerUI(displayVal) {
+    if(!pinpointerActive) return;
+    if(displayVal > 100) displayVal = 100;
+    if(displayVal < 0) displayVal = 0;
+    
+    let ppValText = document.getElementById('pp-val-text');
+    let ppRing = document.getElementById('pp-ring');
+    if(ppValText) ppValText.innerText = displayVal;
+
+    if (displayVal > 10) { 
+        if(ppValText) ppValText.style.color = "#f33"; 
+        if(ppRing) ppRing.style.borderColor = "#f33";
+        let newPitch = 400 + (displayVal * 15);
+        if (newPitch > 2000) newPitch = 2000;
+        if(typeof osc !== 'undefined' && osc && typeof gain !== 'undefined' && gain) {
+            osc.frequency.setTargetAtTime(newPitch, audioCtx.currentTime, 0.05);
+            gain.gain.setTargetAtTime(0.5, audioCtx.currentTime, 0.05);
+        }
+        if (displayVal > 30 && navigator.vibrate) navigator.vibrate(50);
+    } else {
+        if(ppValText) ppValText.style.color = "#4ade80"; 
+        if(ppRing) ppRing.style.borderColor = "#333";
+        if(typeof gain !== 'undefined' && gain) gain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.05); 
+    }
+}
+
+function fallbackMetalDetector() {
+    isFallbackMag = true;
+}
 
 function togglePinpointer() {
     let btn = document.getElementById('btn-pp-toggle');
     if (pinpointerActive) {
         pinpointerActive = false;
         if (typeof gain !== 'undefined' && gain) gain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.05);
-        anomalyScore = 0; lastAlphaForMag = null; baselineMag = null;
+        anomalyScore = 0; lastAlphaForMag = null; baselineMag = null; isFallbackMag = false;
         if (magSensor) { magSensor.stop(); }
         
         if(btn) { btn.innerText = getT('btn_pp_start'); btn.style.color = "#fff"; btn.style.borderColor = "#333"; }
@@ -828,50 +866,34 @@ function togglePinpointer() {
     } else {
         if(typeof initSensors === 'function') initSensors(); 
         pinpointerActive = true;
+        baselineMag = null;
         if(btn) { btn.innerText = getT('btn_pp_stop'); btn.style.color = "#f33"; btn.style.borderColor = "#f33"; }
         
-        // Спроба використати справжній магнітометр (Magnetometer API)
         if ('Magnetometer' in window) {
             try {
                 magSensor = new Magnetometer({frequency: 20});
                 magSensor.addEventListener('reading', () => {
                     let m = Math.sqrt(magSensor.x**2 + magSensor.y**2 + magSensor.z**2);
-                    if (!baselineMag) baselineMag = m;
-                    baselineMag = baselineMag * 0.98 + m * 0.02; // Повільна автокалібровка
+                    if (baselineMag === null) baselineMag = m;
+                    
+                    // Дуже повільна автокалібровка (щоб не скидало сигнал на ключі)
+                    baselineMag = baselineMag * 0.999 + m * 0.001;
                     
                     let diff = Math.abs(m - baselineMag);
                     let sensEl = document.getElementById('sens-slider');
                     let sens = sensEl ? parseFloat(sensEl.value) : 0.5;
                     
-                    anomalyScore = (anomalyScore * 0.5) + (diff * sens * 5); 
+                    if (diff < 1.0) diff = 0; // Поріг шуму Землі
+                    
+                    anomalyScore = (anomalyScore * 0.8) + (diff * sens * 4); 
                     updatePinpointerUI(Math.round(anomalyScore));
                 });
+                magSensor.addEventListener('error', event => { fallbackMetalDetector(); });
                 magSensor.start();
-            } catch(e) { console.log("Magnetometer API disabled, using fallback"); }
+            } catch(e) { fallbackMetalDetector(); }
+        } else {
+            fallbackMetalDetector();
         }
-    }
-}
-
-function updatePinpointerUI(displayVal) {
-    if(!pinpointerActive) return;
-    let ppValText = document.getElementById('pp-val-text');
-    let ppRing = document.getElementById('pp-ring');
-    if(ppValText) ppValText.innerText = displayVal;
-
-    if (displayVal > 15) { 
-        if(ppValText) ppValText.style.color = "#f33"; 
-        if(ppRing) ppRing.style.borderColor = "#f33";
-        let newPitch = 400 + (displayVal * 8);
-        if (newPitch > 2000) newPitch = 2000;
-        if(typeof osc !== 'undefined' && osc && typeof gain !== 'undefined' && gain) {
-            osc.frequency.setTargetAtTime(newPitch, audioCtx.currentTime, 0.05);
-            gain.gain.setTargetAtTime(0.5, audioCtx.currentTime, 0.05);
-        }
-        if (displayVal > 40 && navigator.vibrate) navigator.vibrate(50);
-    } else {
-        if(ppValText) ppValText.style.color = "#4ade80"; 
-        if(ppRing) ppRing.style.borderColor = "#333";
-        if(typeof gain !== 'undefined' && gain) gain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.05); 
     }
 }
 
@@ -882,17 +904,31 @@ function handleOrientation(e) {
     currentPitch = e.beta || 0;
     currentRoll = e.gamma || 0;
 
-    // --- ЛОГІКА МЕТАЛОШУКАЧА (FALLBACK) ---
-    if (typeof pinpointerActive !== 'undefined' && pinpointerActive && !magSensor && e.alpha !== null) {
-        if (lastAlphaForMag !== null) {
-            let diff = Math.abs(e.alpha - lastAlphaForMag);
-            if (diff > 180) diff = 360 - diff;
-            if (diff < 0.5) diff = 0; 
-            let sensEl = document.getElementById('sens-slider');
-            let sens = sensEl ? parseFloat(sensEl.value) : 0.5;
-            anomalyScore = (anomalyScore * 0.85) + (diff * sens * 3); 
+    // --- ЛОГІКА МЕТАЛОШУКАЧА (ГІРО-СТАБІЛІЗОВАНИЙ FALLBACK) ---
+    if (typeof pinpointerActive !== 'undefined' && pinpointerActive && isFallbackMag && e.alpha !== null) {
+        let dp = Math.abs(currentPitch - (window.lastPitchForMag || currentPitch));
+        let dr = Math.abs(currentRoll - (window.lastRollForMag || currentRoll));
+        
+        // Тільки якщо телефон тримають РІВНО і не хитають рукою!
+        if (dp < 1.5 && dr < 1.5) { 
+            if (lastAlphaForMag !== null) {
+                let diff = Math.abs(e.alpha - lastAlphaForMag);
+                if (diff > 180) diff = 360 - diff;
+                if (diff < 0.2) diff = 0; 
+                if (diff > 20) diff = 0; // Ігноруємо різкі розвороти корпусом бійця
+                
+                let sensEl = document.getElementById('sens-slider');
+                let sens = sensEl ? parseFloat(sensEl.value) : 0.5;
+                anomalyScore = (anomalyScore * 0.9) + (diff * sens * 15); 
+                updatePinpointerUI(Math.round(anomalyScore));
+            }
+        } else {
+            anomalyScore *= 0.8; // Гасимо писк, якщо телефон хитається або піднімається
             updatePinpointerUI(Math.round(anomalyScore));
         }
+        
+        window.lastPitchForMag = currentPitch;
+        window.lastRollForMag = currentRoll;
         lastAlphaForMag = e.alpha;
     }
 
@@ -983,7 +1019,6 @@ function updateCompassUI() {
 
             let voiceIntervalMs = parseInt(document.getElementById('voice-interval') ? document.getElementById('voice-interval').value : 10) * 1000;
             
-            // ВИПРАВЛЕНО: Голос працює завжди, незалежно від швидкості руху
             if (isVoiceEnabled && (timeNow - lastVoiceTime > voiceIntervalMs)) {
                 if (currentDistanceToTarget !== null) {
                     let d = Math.round(currentDistanceToTarget);
@@ -1080,7 +1115,13 @@ document.getElementById('btn-guide-voice').onclick = async () => {
     let btn = document.getElementById('btn-guide-voice'), settings = document.getElementById('voice-settings');
     btn.innerText = isVoiceEnabled ? getT('btn_voice_on') : getT('btn_voice_off'); 
     btn.style.color = isVoiceEnabled ? "#4ade80" : "#ccc"; 
-    if (isVoiceEnabled) { if(settings) settings.style.display = 'block'; } else { if(settings) settings.style.display = 'none'; }
+    if (isVoiceEnabled) { 
+        if(settings) settings.style.display = 'block'; 
+        speakText(getT('voice_on_test') || "Голосовий супровід активовано."); 
+    } else { 
+        if(settings) settings.style.display = 'none'; 
+        window.speechSynthesis.cancel();
+    }
 };
 
 let voiceSlider = document.getElementById('voice-interval');
