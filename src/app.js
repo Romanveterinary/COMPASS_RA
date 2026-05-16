@@ -118,9 +118,9 @@ const translations = {
         gps_offline: "❌ GPS ВТРАЧЕНО (OFFLINE)",
         voice_dist: "Відстань",
         voice_meters: "метрів",
-        voice_turn: "Розверніться! Ви віддаляєтесь.",
-        voice_right: "Правіше.",
-        voice_left: "Лівіше.",
+        voice_turn: "Розверніться! Відстань",
+        voice_right: "Правіше. Відстань",
+        voice_left: "Лівіше. Відстань",
         alert_no_start: "Увага: Немає початкової точки. Встановіть її кнопкою Я ТУТ (БЕЗ GPS).",
         alert_pedo_on: "✅ АВТОНОМНА НАВІГАЦІЯ УВІМКНЕНА!",
         alert_pedo_off: "Офлайн трекінг зупинено.",
@@ -150,7 +150,7 @@ const translations = {
         man_title: "COMBAT MANUAL", man_h1: "🔐 1. SYSTEM LOGIN", man_p1: "Press Start.", man_h2: "📍 2. ROUTE / MAP", man_p2: "Double tap to set target. Use 'I AM HERE' to manually set location.", man_h3: "🧭 3. COMPASS / GUIDE", man_p3: "Use pedometer for offline tracking. Vibro-guide will point you to the target.", man_h4: "🌌 4. ASTRO / NO GPS", man_p4: "Calibrate horizon, then look up to lock Polaris or the Sun in crosshair to fix compass.", man_h5: "👁 5. OPTICS / AI", man_p5: "Use IR filter in low light. AI Scan detects vehicles and personnel.", man_h6: "💬 6. TEXT / QR-RADIO", man_p6: "Share encrypted messages via QR codes.", man_h7: "🛡 7. SECURITY / SHIELD", man_p7: "Put phone on bag. Any vibration triggers the alarm.", man_h8: "🆘 8. SOS / BEACON", man_p8: "Activate SOS to flash screen and emit a 3-second beacon tone.",
         eco_touch: "TOUCH SCREEN<br>(3 sec)", btn_eco_exit: "EXIT BLACKOUT", wiz_title: "OFFLINE MODE", wiz_text: "Hint text", btn_wiz_cancel: "CANCEL", btn_wiz_next: "NEXT ➡",
         lvl3: "LEVEL 3: AUTONOMOUS", lvl2: "LEVEL 2: STEALTH (GPS)", lvl1: "LEVEL 1: MAX (RADIO TRACE)", gps_delay: "⚠️ GPS DELAY", gps_manual: "📍 MANUAL MODE", gps_lost: "❌ GPS JAMMED (>200m)", gps_ok: "GPS: OK", gps_offline: "❌ GPS LOST (OFFLINE)",
-        voice_dist: "Distance", voice_meters: "meters", voice_turn: "Turn around!", voice_right: "More to the right.", voice_left: "More to the left.", alert_no_start: "Warning: No start point set.", alert_pedo_on: "✅ AUTONOMOUS NAVIGATION ON!", alert_pedo_off: "Offline tracking stopped.", alert_man_pos: "📍 MANUAL MODE:\nTap the map where you are.", astro_sun_fix: "☀️ Sun locked!", astro_star_fix: "⭐ Star locked!", astro_hor_fix: "⚖️ Horizon locked", astro_hor_next: "Now lift the phone up to search for stars.", lbl_meters_short: "m", cal_done: "CAL: DONE", alert_no_gps_cal: "No GPS signal!", voice_on_test: "Voice guidance activated."
+        voice_dist: "Distance", voice_meters: "meters", voice_turn: "Turn around!", voice_right: "Right.", voice_left: "Left.", alert_no_start: "Warning: No start point set.", alert_pedo_on: "✅ AUTONOMOUS NAVIGATION ON!", alert_pedo_off: "Offline tracking stopped.", alert_man_pos: "📍 MANUAL MODE:\nTap the map where you are.", astro_sun_fix: "☀️ Sun locked!", astro_star_fix: "⭐ Star locked!", astro_hor_fix: "⚖️ Horizon locked", astro_hor_next: "Now lift the phone up to search for stars.", lbl_meters_short: "m", cal_done: "CAL: DONE", alert_no_gps_cal: "No GPS signal!", voice_on_test: "Voice guidance activated."
     },
     'pt': {
         btn_login: "INICIAR", err_access_denied: "❌ ACESSO NEGADO", title_qr_scan: "CÓDIGO DE DADOS", btn_close: "FECHAR", menu_day_night: "☀️ DIA / 🔴 NOITE", menu_map: "📍 ROTA / MAPA", menu_compass: "🧭 BÚSSOLA / GUIA", menu_astro: "🌌 ASTRO / SEM GPS", menu_optics: "👁 ÓPTICA / IA", menu_radio: "💬 TEXTO / RÁDIO QR", menu_shield: "🛡 SEGURANÇA / ESCUDO", menu_manual: "📖 INSTRUÇÕES", menu_power_off: "🛑 DESLIGAR APP", menu_destroy: "💥 DESTRUIR DADOS", menu_sos: "🆘 SOS / SINALIZADOR",
@@ -207,11 +207,14 @@ function toggleNightMode() {
 async function startSystem() {
     document.getElementById('pin-screen').style.display = 'none';
     
-    // Ініціалізація голосового синтезатора після першого кліку
+    // --- ПРИМУСОВИЙ ПРОГРІВ ГОЛОСУ ДЛЯ ANDROID WEBVIEW ---
     if ('speechSynthesis' in window) {
-        let msg = new SpeechSynthesisUtterance(" ");
-        msg.volume = 0.01; // Трохи звуку для ініціалізації
-        window.speechSynthesis.speak(msg);
+        window.speechSynthesis.getVoices();
+        setTimeout(() => {
+            let msg = new SpeechSynthesisUtterance("1");
+            msg.volume = 0.01;
+            window.speechSynthesis.speak(msg);
+        }, 100);
     }
 
     await initSensors();
@@ -347,13 +350,24 @@ function playSystemTone(freq, duration) {
     } catch(e) {}
 }
 
+// --- ВИПРАВЛЕНИЙ АЛГОРИТМ ГОЛОСУ ---
 function speakText(text) {
     if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.cancel(); 
+    
+    window.speechSynthesis.cancel(); // Обов'язково зупиняємо попередню фразу
+    
     let utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = currentLang === 'uk' ? 'uk-UA' : (currentLang === 'pt' ? 'pt-PT' : 'en-US');
+    
+    let targetLang = currentLang === 'uk' ? 'uk-UA' : (currentLang === 'pt' ? 'pt-PT' : 'en-US');
+    utterance.lang = targetLang;
+    
+    let voices = window.speechSynthesis.getVoices();
+    let voice = voices.find(v => v.lang.includes(targetLang) || v.lang.includes(targetLang.split('-')[0]));
+    if(voice) utterance.voice = voice;
+
     utterance.rate = 1.0; 
     utterance.volume = 1.0;
+    
     window.speechSynthesis.speak(utterance);
 }
 
@@ -876,14 +890,14 @@ function togglePinpointer() {
                     let m = Math.sqrt(magSensor.x**2 + magSensor.y**2 + magSensor.z**2);
                     if (baselineMag === null) baselineMag = m;
                     
-                    // Дуже повільна автокалібровка (щоб не скидало сигнал на ключі)
+                    // Дуже повільна автокалібровка
                     baselineMag = baselineMag * 0.999 + m * 0.001;
                     
                     let diff = Math.abs(m - baselineMag);
                     let sensEl = document.getElementById('sens-slider');
                     let sens = sensEl ? parseFloat(sensEl.value) : 0.5;
                     
-                    if (diff < 1.0) diff = 0; // Поріг шуму Землі
+                    if (diff < 1.0) diff = 0; 
                     
                     anomalyScore = (anomalyScore * 0.8) + (diff * sens * 4); 
                     updatePinpointerUI(Math.round(anomalyScore));
@@ -915,7 +929,7 @@ function handleOrientation(e) {
                 let diff = Math.abs(e.alpha - lastAlphaForMag);
                 if (diff > 180) diff = 360 - diff;
                 if (diff < 0.2) diff = 0; 
-                if (diff > 20) diff = 0; // Ігноруємо різкі розвороти корпусом бійця
+                if (diff > 20) diff = 0; // Ігноруємо різкі розвороти
                 
                 let sensEl = document.getElementById('sens-slider');
                 let sens = sensEl ? parseFloat(sensEl.value) : 0.5;
@@ -923,7 +937,7 @@ function handleOrientation(e) {
                 updatePinpointerUI(Math.round(anomalyScore));
             }
         } else {
-            anomalyScore *= 0.8; // Гасимо писк, якщо телефон хитається або піднімається
+            anomalyScore *= 0.8; // Гасимо писк, якщо телефон хитається
             updatePinpointerUI(Math.round(anomalyScore));
         }
         
@@ -1025,10 +1039,10 @@ function updateCompassUI() {
                     let txtDist = getT('voice_dist'); let txtMeters = getT('voice_meters');
                     if (isEcoMode) { speakText(`${txtDist} ${d} ${txtMeters}.`); lastVoiceTime = timeNow; } 
                     else {
-                        if (absDiff > 120) { speakText(`${getT('voice_turn')} ${txtDist} ${d} ${txtMeters}.`); lastVoiceTime = timeNow; } 
+                        if (absDiff > 120) { speakText(`${getT('voice_turn')} ${d} ${txtMeters}.`); lastVoiceTime = timeNow; } 
                         else if (absDiff > 25) {
                             let dirText = relativeAngle > 0 ? getT('voice_right') : getT('voice_left');
-                            speakText(`${dirText} ${txtDist} ${d} ${txtMeters}.`); lastVoiceTime = timeNow;
+                            speakText(`${dirText} ${d} ${txtMeters}.`); lastVoiceTime = timeNow;
                         } else {
                             speakText(`${txtDist} ${d} ${txtMeters}.`); lastVoiceTime = timeNow;
                         }
