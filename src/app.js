@@ -91,7 +91,7 @@ const translations = {
         man_h2: "📍 2. МАРШРУТ / МАПА",
         man_p2: "<strong>Як поставити ціль:</strong> Двічі швидко тапни по карті.<br><strong>Я ТУТ (БЕЗ GPS):</strong> Використовуй під РЕБом. Натисни і ткни пальцем у карту туди, де ти зараз.<br><strong>15м:</strong> Натисни і пройди 15 метрів для точного калібрування.",
         man_h3: "🧭 3. КОМПАС / ПОВОДИР",
-        man_p3: "<strong>Крокомір:</strong> Якщо немає GPS, увімкни його і він сам рахуватиме кроки.<br><strong>Поводир (Вібро):</strong> Телефон вібрує, коли дивишся точно на ціль.<br><strong>ЕКО-Блекаут:</strong> Поклади палець на чорний екран на 3 сек, щоб дізнатися відстань.",
+        man_p3: "<strong>Крокомір:</strong> Якщо немає GPS, увімкни його і він сам рахуватиме кроки.<br><strong>Поводир:</strong> Підказує напрямок голосом і вібрацією.<br><strong>ЕКО-Блекаут:</strong> Гасить екран (телефон не вимкнеться).",
         man_h4: "🌌 4. АСТРО / БЕЗ GPS",
         man_p4: "Коли компас збився: Тримаєш телефон рівно -> 'КАЛІБРУВАТИ ГОРИЗОНТ' -> піднімаєш у небо. Наведись на Полярну зірку або Сонце в приціл і натисни кнопку.",
         man_h5: "👁 5. ОПТИКА / ШІ",
@@ -132,7 +132,7 @@ const translations = {
         lbl_meters_short: "м",
         cal_done: "КАЛІБР: ГОТОВО",
         alert_no_gps_cal: "Немає сигналу GPS!",
-        voice_on_test: "Голосовий супровід активовано."
+        voice_on_test: "Голосовий супровід увімкнено."
     },
     'en': {
         btn_login: "START", err_access_denied: "❌ ACCESS DENIED", title_qr_scan: "OPTICAL DATA CODE", btn_close: "CLOSE", menu_day_night: "☀️ DAY / 🔴 NIGHT", menu_map: "📍 ROUTE / MAP", menu_compass: "🧭 COMPASS / GUIDE", menu_astro: "🌌 ASTRO / NO GPS", menu_optics: "👁 OPTICS / AI", menu_radio: "💬 TEXT / QR RADIO", menu_shield: "🛡 SECURITY / SHIELD", menu_manual: "📖 INSTRUCTIONS", menu_power_off: "🛑 SHUTDOWN APP", menu_destroy: "💥 DESTROY DATA", menu_sos: "🆘 SOS / BEACON",
@@ -147,10 +147,10 @@ const translations = {
         chat_title: "OFFLINE RADIO", chat_desc: "Enter text and generate an encrypted QR code.", btn_chat_cam: "📷 TURN ON CAMERA TO READ", chat_left: "Remaining: 200 chars", btn_chat_gen: "GENERATE ENCRYPTED QR", btn_chat_clear: "CLEAR TEXT",
         shield_title: "SECURITY / SHIELD", btn_shield_off: "ACTIVATE SHIELD", btn_shield_on: "SHIELD ACTIVE", btn_shield_snd_off: "SIREN SOUND: OFF", btn_shield_snd_on: "SIREN SOUND: ON",
         sos_title: "SURVIVAL BEACON", sos_coords: "COORDINATES:", sos_battery: "BATTERY:", btn_sos_on: "ALARM (TURN ON)", btn_sos_off: "TURN OFF SOS", sos_no_gps: "WAITING FOR GPS",
-        man_title: "COMBAT MANUAL", man_h1: "🔐 1. SYSTEM LOGIN", man_p1: "Press Start.", man_h2: "📍 2. ROUTE / MAP", man_p2: "Double tap to set target. Use 'I AM HERE' to manually set location.", man_h3: "🧭 3. COMPASS / GUIDE", man_p3: "Use pedometer for offline tracking. Vibro-guide will point you to the target.", man_h4: "🌌 4. ASTRO / NO GPS", man_p4: "Calibrate horizon, then look up to lock Polaris or the Sun in crosshair to fix compass.", man_h5: "👁 5. OPTICS / AI", man_p5: "Use IR filter in low light. AI Scan detects vehicles and personnel.", man_h6: "💬 6. TEXT / QR-RADIO", man_p6: "Share encrypted messages via QR codes.", man_h7: "🛡 7. SECURITY / SHIELD", man_p7: "Put phone on bag. Any vibration triggers the alarm.", man_h8: "🆘 8. SOS / BEACON", man_p8: "Activate SOS to flash screen and emit a 3-second beacon tone.",
+        man_title: "COMBAT MANUAL", man_h1: "🔐 1. SYSTEM LOGIN", man_p1: "Press Start.", man_h2: "📍 2. ROUTE / MAP", man_p2: "Double tap to set target.", man_h3: "🧭 3. COMPASS / GUIDE", man_p3: "Use pedometer for offline tracking. Voice guide will point you to the target.", man_h4: "🌌 4. ASTRO / NO GPS", man_p4: "Calibrate horizon, then look up to lock Polaris or the Sun in crosshair to fix compass.", man_h5: "👁 5. OPTICS / AI", man_p5: "Use IR filter in low light. AI Scan detects vehicles and personnel.", man_h6: "💬 6. TEXT / QR-RADIO", man_p6: "Share encrypted messages via QR codes.", man_h7: "🛡 7. SECURITY / SHIELD", man_p7: "Put phone on bag. Any vibration triggers the alarm.", man_h8: "🆘 8. SOS / BEACON", man_p8: "Activate SOS to flash screen and emit a 3-second beacon tone.",
         eco_touch: "TOUCH SCREEN<br>(3 sec)", btn_eco_exit: "EXIT BLACKOUT", wiz_title: "OFFLINE MODE", wiz_text: "Hint text", btn_wiz_cancel: "CANCEL", btn_wiz_next: "NEXT ➡",
         lvl3: "LEVEL 3: AUTONOMOUS", lvl2: "LEVEL 2: STEALTH (GPS)", lvl1: "LEVEL 1: MAX (RADIO TRACE)", gps_delay: "⚠️ GPS DELAY", gps_manual: "📍 MANUAL MODE", gps_lost: "❌ GPS JAMMED (>200m)", gps_ok: "GPS: OK", gps_offline: "❌ GPS LOST (OFFLINE)",
-        voice_dist: "Distance", voice_meters: "meters", voice_turn: "Turn around!", voice_right: "Right.", voice_left: "Left.", alert_no_start: "Warning: No start point set.", alert_pedo_on: "✅ AUTONOMOUS NAVIGATION ON!", alert_pedo_off: "Offline tracking stopped.", alert_man_pos: "📍 MANUAL MODE:\nTap the map where you are.", astro_sun_fix: "☀️ Sun locked!", astro_star_fix: "⭐ Star locked!", astro_hor_fix: "⚖️ Horizon locked", astro_hor_next: "Now lift the phone up to search for stars.", lbl_meters_short: "m", cal_done: "CAL: DONE", alert_no_gps_cal: "No GPS signal!", voice_on_test: "Voice guidance activated."
+        voice_dist: "Distance", voice_meters: "meters", voice_turn: "Turn around! Distance", voice_right: "Right. Distance", voice_left: "Left. Distance", alert_no_start: "Warning: No start point set.", alert_pedo_on: "✅ AUTONOMOUS NAVIGATION ON!", alert_pedo_off: "Offline tracking stopped.", alert_man_pos: "📍 MANUAL MODE:\nTap the map where you are.", astro_sun_fix: "☀️ Sun locked!", astro_star_fix: "⭐ Star locked!", astro_hor_fix: "⚖️ Horizon locked", astro_hor_next: "Now lift the phone up to search for stars.", lbl_meters_short: "m", cal_done: "CAL: DONE", alert_no_gps_cal: "No GPS signal!", voice_on_test: "Voice guidance activated."
     },
     'pt': {
         btn_login: "INICIAR", err_access_denied: "❌ ACESSO NEGADO", title_qr_scan: "CÓDIGO DE DADOS", btn_close: "FECHAR", menu_day_night: "☀️ DIA / 🔴 NOITE", menu_map: "📍 ROTA / MAPA", menu_compass: "🧭 BÚSSOLA / GUIA", menu_astro: "🌌 ASTRO / SEM GPS", menu_optics: "👁 ÓPTICA / IA", menu_radio: "💬 TEXTO / RÁDIO QR", menu_shield: "🛡 SEGURANÇA / ESCUDO", menu_manual: "📖 INSTRUÇÕES", menu_power_off: "🛑 DESLIGAR APP", menu_destroy: "💥 DESTRUIR DADOS", menu_sos: "🆘 SOS / SINALIZADOR",
@@ -165,10 +165,10 @@ const translations = {
         chat_title: "RÁDIO OFFLINE", chat_desc: "Insira texto e gere um QR criptografado.", btn_chat_cam: "📷 LIGAR CÂMERA", chat_left: "Restante: 200 carac.", btn_chat_gen: "GERAR QR", btn_chat_clear: "LIMPAR TEXTO",
         shield_title: "SEGURANÇA / ESCUDO", btn_shield_off: "ATIVAR ESCUDO", btn_shield_on: "ESCUDO ATIVO", btn_shield_snd_off: "SOM SIRENE: DESL", btn_shield_snd_on: "SOM SIRENE: LIG",
         sos_title: "SINALIZADOR", sos_coords: "COORDENADAS:", sos_battery: "BATERIA:", btn_sos_on: "ALARME (LIGAR)", btn_sos_off: "DESLIGAR SOS", sos_no_gps: "AGUARDANDO GPS",
-        man_title: "MANUAL DE COMBATE", man_h1: "🔐 1. LOGIN", man_p1: "Pressione INICIAR.", man_h2: "📍 2. ROTA / MAPA", man_p2: "Toque duplo define alvo.", man_h3: "🧭 3. BÚSSOLA", man_p3: "Pedômetro offline.", man_h4: "🌌 4. ASTRO", man_p4: "Calibre horizonte, mire na Estrela no centro.", man_h5: "👁 5. ÓPTICA", man_p5: "Filtro IR.", man_h6: "💬 6. RÁDIO QR", man_p6: "QR encriptado.", man_h7: "🛡 7. ESCUDO", man_p7: "Alarme de movimento.", man_h8: "🆘 8. SOS", man_p8: "Som e flash.",
+        man_title: "MANUAL DE COMBATE", man_h1: "🔐 1. LOGIN", man_p1: "Pressione INICIAR.", man_h2: "📍 2. ROTA / MAPA", man_p2: "Toque duplo define alvo.", man_h3: "🧭 3. BÚSSOLA", man_p3: "Pedômetro offline.", man_h4: "🌌 4. ASTRO", man_p4: "Calibre horizonte.", man_h5: "👁 5. ÓPTICA", man_p5: "Filtro IR.", man_h6: "💬 6. RÁDIO QR", man_p6: "QR encriptado.", man_h7: "🛡 7. ESCUDO", man_p7: "Alarme de movimento.", man_h8: "🆘 8. SOS", man_p8: "Som e flash.",
         eco_touch: "TOQUE NA TELA<br>(3 seg)", btn_eco_exit: "SAIR DO BLACKOUT", wiz_title: "MODO OFFLINE", wiz_text: "Texto", btn_wiz_cancel: "CANCELAR", btn_wiz_next: "PRÓXIMO ➡",
         lvl3: "NÍVEL 3: AUTÔNOMO", lvl2: "NÍVEL 2: FURTIVO (GPS)", lvl1: "NÍVEL 1: MÁX", gps_delay: "⚠️ ATRASO GPS", gps_manual: "📍 MODO MANUAL", gps_lost: "❌ GPS BLOQUEADO", gps_ok: "GPS: OK", gps_offline: "❌ GPS PERDIDO",
-        voice_dist: "Distância", voice_meters: "metros", voice_turn: "Vire-se!", voice_right: "Para a direita.", voice_left: "Para a esquerda.", alert_no_start: "Aviso: Sem ponto.", alert_pedo_on: "✅ NAVEGAÇÃO LIGADA!", alert_pedo_off: "Parado.", alert_man_pos: "📍 MANUAL:\nToque no mapa.", astro_sun_fix: "☀️ Sol fixado!", astro_star_fix: "⭐ Estrela fixada!", astro_hor_fix: "⚖️ Horizonte fixado", astro_hor_next: "Levante o telefone.", lbl_meters_short: "m", cal_done: "CAL: PRONTO", alert_no_gps_cal: "Sem sinal GPS!", voice_on_test: "Guia de voz ativado."
+        voice_dist: "Distância", voice_meters: "metros", voice_turn: "Vire-se! Distância", voice_right: "Para a direita. Distância", voice_left: "Para a esquerda. Distância", alert_no_start: "Aviso: Sem ponto.", alert_pedo_on: "✅ NAVEGAÇÃO LIGADA!", alert_pedo_off: "Parado.", alert_man_pos: "📍 MANUAL:\nToque no mapa.", astro_sun_fix: "☀️ Sol fixado!", astro_star_fix: "⭐ Estrela fixada!", astro_hor_fix: "⚖️ Horizonte fixado", astro_hor_next: "Levante o telefone.", lbl_meters_short: "m", cal_done: "CAL: PRONTO", alert_no_gps_cal: "Sem sinal GPS!", voice_on_test: "Guia de voz ativado."
     }
 };
 
@@ -207,14 +207,12 @@ function toggleNightMode() {
 async function startSystem() {
     document.getElementById('pin-screen').style.display = 'none';
     
-    // --- ПРИМУСОВИЙ ПРОГРІВ ГОЛОСУ ДЛЯ ANDROID WEBVIEW ---
+    // ПРИМУСОВИЙ ПРОГРІВ СИНТЕЗАТОРА ПІСЛЯ КЛІКУ КОРИСТУВАЧА
     if ('speechSynthesis' in window) {
-        window.speechSynthesis.getVoices();
-        setTimeout(() => {
-            let msg = new SpeechSynthesisUtterance("1");
-            msg.volume = 0.01;
-            window.speechSynthesis.speak(msg);
-        }, 100);
+        window.speechSynthesis.getVoices(); // Прогрів списку
+        let msg = new SpeechSynthesisUtterance(" ");
+        msg.volume = 0.01;
+        window.speechSynthesis.speak(msg);
     }
 
     await initSensors();
@@ -293,8 +291,16 @@ function initSystem() {
     }, 1000);
 }
 
-async function requestWakeLock() { if ('wakeLock' in navigator) { try { wakeLock = await navigator.wakeLock.request('screen'); } catch (err) {} } }
-function releaseWakeLock() { if (wakeLock !== null) { wakeLock.release().then(() => wakeLock = null); } }
+// УТРИМАННЯ ЕКРАНУ В УВІМКНЕНОМУ СТАНІ
+async function requestWakeLock() { 
+    if ('wakeLock' in navigator) { 
+        try { wakeLock = await navigator.wakeLock.request('screen'); } catch (err) {} 
+    } 
+}
+function releaseWakeLock() { 
+    if (wakeLock !== null) { wakeLock.release().then(() => wakeLock = null); } 
+}
+
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) turnOffCamera();
     if (!document.hidden && wakeLock !== null && document.getElementById('mod-map').classList.contains('active')) { requestWakeLock(); }
@@ -350,21 +356,16 @@ function playSystemTone(freq, duration) {
     } catch(e) {}
 }
 
-// --- ВИПРАВЛЕНИЙ АЛГОРИТМ ГОЛОСУ ---
+// СУВОРЕ КЕРУВАННЯ ГОЛОСОМ
 function speakText(text) {
     if (!('speechSynthesis' in window)) return;
     
-    window.speechSynthesis.cancel(); // Обов'язково зупиняємо попередню фразу
+    window.speechSynthesis.cancel(); // Перебиваємо попередню фразу
     
     let utterance = new SpeechSynthesisUtterance(text);
-    
     let targetLang = currentLang === 'uk' ? 'uk-UA' : (currentLang === 'pt' ? 'pt-PT' : 'en-US');
     utterance.lang = targetLang;
     
-    let voices = window.speechSynthesis.getVoices();
-    let voice = voices.find(v => v.lang.includes(targetLang) || v.lang.includes(targetLang.split('-')[0]));
-    if(voice) utterance.voice = voice;
-
     utterance.rate = 1.0; 
     utterance.volume = 1.0;
     
@@ -396,7 +397,8 @@ async function showModule(id) {
     document.querySelectorAll('.module').forEach(m => m.classList.remove('active'));
     document.getElementById(id).classList.add('active');
 
-    if (id === 'mod-map' || id === 'mod-sos') {
+    // Якщо це мапа, SOS або Компас - забороняємо телефону спати
+    if (id === 'mod-map' || id === 'mod-sos' || id === 'mod-compass') {
         requestWakeLock();
         if (id === 'mod-map' && map) { setTimeout(() => { map.invalidateSize(); if (lastGoodGPS) map.setView([lastGoodGPS.lat, lastGoodGPS.lon], 18); }, 200); }
     } else { releaseWakeLock(); }
@@ -1033,18 +1035,26 @@ function updateCompassUI() {
 
             let voiceIntervalMs = parseInt(document.getElementById('voice-interval') ? document.getElementById('voice-interval').value : 10) * 1000;
             
+            // ЛОГІКА ГОЛОСОВОГО ПОВОДИРЯ (НАВІГАТОР)
             if (isVoiceEnabled && (timeNow - lastVoiceTime > voiceIntervalMs)) {
                 if (currentDistanceToTarget !== null) {
                     let d = Math.round(currentDistanceToTarget);
                     let txtDist = getT('voice_dist'); let txtMeters = getT('voice_meters');
-                    if (isEcoMode) { speakText(`${txtDist} ${d} ${txtMeters}.`); lastVoiceTime = timeNow; } 
-                    else {
-                        if (absDiff > 120) { speakText(`${getT('voice_turn')} ${d} ${txtMeters}.`); lastVoiceTime = timeNow; } 
-                        else if (absDiff > 25) {
+                    
+                    if (isEcoMode) { 
+                        speakText(`${txtDist} ${d} ${txtMeters}.`); 
+                        lastVoiceTime = timeNow; 
+                    } else {
+                        if (absDiff > 120) { 
+                            speakText(`${getT('voice_turn')} ${d} ${txtMeters}.`); 
+                            lastVoiceTime = timeNow; 
+                        } else if (absDiff > 25) {
                             let dirText = relativeAngle > 0 ? getT('voice_right') : getT('voice_left');
-                            speakText(`${dirText} ${d} ${txtMeters}.`); lastVoiceTime = timeNow;
+                            speakText(`${dirText} ${d} ${txtMeters}.`); 
+                            lastVoiceTime = timeNow;
                         } else {
-                            speakText(`${txtDist} ${d} ${txtMeters}.`); lastVoiceTime = timeNow;
+                            speakText(`${txtDist} ${d} ${txtMeters}.`); 
+                            lastVoiceTime = timeNow;
                         }
                     }
                 }
