@@ -1,0 +1,56 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies and setup Capacitor
+      run: |
+        npm init -y
+        npm install @capacitor/cli @capacitor/core @capacitor/android
+        npx cap init compass_ra com.ra.tactical --web-dir src
+        npx cap add android
+
+    - name: Add Android Permissions
+      run: |
+        MANIFEST_PATH="android/app/src/main/AndroidManifest.xml"
+        sed -i '/<application/i \
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />\n\
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />\n\
+        <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />\n\
+        <uses-permission android:name="android.permission.CAMERA" />\n\
+        <uses-permission android:name="android.permission.VIBRATE" />\n\
+        <uses-permission android:name="android.permission.WAKE_LOCK" />\n' $MANIFEST_PATH
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x android/gradlew
+
+    - name: Build Debug APK
+      run: cd android && ./gradlew assembleDebug
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-debug
+        path: android/app/build/outputs/apk/debug/app-debug.apk
