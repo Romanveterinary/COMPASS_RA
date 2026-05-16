@@ -48,7 +48,6 @@
         .map-fab-cal { position:absolute; bottom:20px; right:10px; width:60px; height:60px; border-radius:50%; background:rgba(0,0,0,0.8); color:#f1c40f; border:2px solid #f1c40f; z-index:1100; font-weight:bold; font-size:1.1rem; display:flex; align-items:center; justify-content:center; box-shadow: 0 0 10px rgba(0,0,0,0.5); cursor:pointer; }
         .map-fab-eco { position:absolute; bottom:90px; right:10px; width:60px; height:60px; border-radius:50%; background:rgba(0,0,0,0.8); color:#0cf; border:2px solid #0cf; z-index:1100; font-weight:bold; font-size:1.5rem; display:flex; align-items:center; justify-content:center; box-shadow: 0 0 10px rgba(0,0,0,0.5); cursor:pointer; }
 
-        /* ВИПРАВЛЕНІ СТИЛІ КОМПАСА */
         #compass-container { width: 300px; height: 300px; margin: 10px auto; position: relative; border: 2px solid #222; border-radius: 50%; background: radial-gradient(circle, #111, #000); }
         #tc-ring { width: 100%; height: 100%; position: absolute; border-radius: 50%; border: 1px dashed #444; } 
         .compass-mark { position: absolute; top: 50%; left: 50%; transform-origin: center center; font-weight: bold; color: #888; font-size: 1rem; }
@@ -62,10 +61,11 @@
 </head>
 <body>
     <div id="pin-screen" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:99999; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-        <h2 style="color:#333; margin-bottom: 20px;">SYSTEM LOCKED</h2>
-        <input type="password" id="pin-input" inputmode="numeric" placeholder="****" style="background:#111; color:#0cf; border:1px solid #333; padding:15px; font-size:2rem; text-align:center; width:200px; letter-spacing: 10px; border-radius: 8px;">
-        <button onclick="checkPin()" class="tactical-btn" style="width:200px; margin-top:20px;" data-i18n="btn_login">ВХІД</button>
-        <div id="pin-error" style="color:#f33; margin-top:20px; font-weight:bold; display:none;" data-i18n="err_access_denied">❌ ДОСТУП ЗАБОРОНЕНО</div>
+        <div style="width: 150px; height: 150px; border: 4px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; box-shadow: 0 0 30px rgba(74, 222, 128, 0.3);">
+            <div style="font-size: 60px;">🛡️</div>
+        </div>
+        <h2 style="color:#4ade80; margin-bottom: 40px; font-family: monospace; letter-spacing: 2px;">СИСТЕМА ГОТОВА</h2>
+        <button onclick="startSystem()" class="tactical-btn" style="width:250px; padding:20px; font-size:1.5rem; background: #0a4a0a; border: 2px solid #4ade80; color:#fff; border-radius: 10px; box-shadow: 0 0 15px #4ade80;" data-i18n="btn_login">ЗАПУСК</button>
     </div>
 
     <div id="qr-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:11000; flex-direction:column; align-items:center; justify-content:center;">
