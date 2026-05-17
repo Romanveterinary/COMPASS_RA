@@ -135,7 +135,7 @@
                 <button id="btn-del-last" class="map-btn" style="color:#f33;" data-i18n="btn_map_del_last">✖ ОСТАННЯ ТОЧКА</button>
                 <button id="btn-clear-map" class="map-btn" style="color:#f33;" data-i18n="btn_map_clear">🗑 ОЧИСТИТИ МАРШРУТ</button>
                 <button id="btn-layer-toggle" class="map-btn" data-i18n="btn_map_layer">🗺 ШАР</button>
-                <button id="btn-cache-map" class="map-btn" data-i18n="btn_map_cache">💾 КЕШ 2х2 км</button>
+                <button id="btn-cache-map" class="map-btn" data-i18n="btn_map_cache">⬇️ ЗАКАЧАТИ ЗОНУ (ОФЛАЙН)</button>
             </div>
         </section>
 
@@ -167,8 +167,12 @@
             <div class="guide-panel">
                 <div class="flex-row">
                     <button id="btn-guide-voice" class="tactical-btn" style="flex:1; border-color:#555; color:#ccc;" data-i18n="btn_voice_off">ГОЛОС: ВИМК</button>
+                    <button class="tactical-btn" style="width:70px; background:#222; border-color:#555; color:#fff;" onclick="testVoice()" title="Тест голосу">🔊</button>
+                </div>
+                <div class="flex-row" style="margin-top:10px;">
                     <button id="btn-guide" class="tactical-btn" style="flex:1; color:#558; border-color:#224;" data-i18n="btn_vibro_off">ПОВОДИР (ВІБРО): ВИМК</button>
                 </div>
+                
                 <div id="voice-settings" style="display:none; margin-top:10px; padding: 10px; background: rgba(0,0,0,0.5); border-radius: 8px;">
                     <label style="color:#aaa; font-size:0.8rem; display:block; text-align:left; margin-bottom:5px;"><span data-i18n="lbl_voice_int">ІНТЕРВАЛ ПІДКАЗОК:</span> <span id="voice-interval-val" style="color:#4ade80; font-weight:bold;">10</span> <span data-i18n="lbl_sec">сек</span></label>
                     <input type="range" id="voice-interval" min="10" max="60" step="10" value="10" style="width:100%;">
@@ -246,7 +250,7 @@
             </div>
             
             <div class="astro-btn-container">
-                <button id="btn-astro-horizon" class="tactical-btn" style="background:rgba(0,0,0,0.8); color:#0cf; margin: 0 5px 10px 5px; border-color:#0cf;" data-i18n="btn_astro_cal">⚖ КАЛІБРУВАТ ГОРИЗОНТ (0°)</button>
+                <button id="btn-astro-horizon" class="tactical-btn" style="background:rgba(0,0,0,0.8); color:#0cf; margin: 0 5px 10px 5px; border-color:#0cf;" data-i18n="btn_astro_cal">⚖ КАЛІБРУВАТИ ГОРИЗОНТ (0°)</button>
                 <div style="display:flex; justify-content: space-around; width: 100%;">
                     <button id="btn-astro-sun" class="tactical-btn" style="background:rgba(0,0,0,0.8); color:#f1c40f; flex:1; margin:0 5px;" data-i18n="btn_astro_sun">☀ СОНЦЕ (ЗАФІКСУВАТИ)</button>
                     <button id="btn-astro-star" class="tactical-btn" style="background:rgba(0,0,0,0.8); color:#fff; flex:1; margin:0 5px;" data-i18n="btn_astro_star">⭐ ЗІРКА (ЗАФІКСУВАТИ)</button>
@@ -324,7 +328,9 @@
                     <span data-i18n="sos_battery" style="color: #ccc;">БАТАРЕЯ:</span> <span id="sos-batt" style="color: #f1c40f; font-weight: bold; font-size: 1.5rem;">--%</span>
                 </div>
                 
-                <button id="btn-sos-toggle" class="tactical-btn" style="background: #f33; color: #fff; height: 120px; font-size: 2rem; border-radius: 20px; box-shadow: 0 0 20px #f33; border: 2px solid #fff;" onclick="toggleSOS()" data-i18n="btn_sos_on">АЛАРМ (УВІМКНУТИ)</button>
+                <button class="tactical-btn" style="border-color: #fff; color: #fff; margin-bottom: 20px; width: 100%;" onclick="showDroneQR()" data-i18n="btn_sos_qr">🔲 QR ДЛЯ ДРОНА</button>
+                
+                <button id="btn-sos-toggle" class="tactical-btn" style="background: #f33; color: #fff; height: 120px; font-size: 2rem; border-radius: 20px; box-shadow: 0 0 20px #f33; border: 2px solid #fff; width: 100%;" onclick="toggleSOS()" data-i18n="btn_sos_on">АЛАРМ (УВІМКНУТИ)</button>
             </div>
         </section>
         
@@ -336,10 +342,10 @@
                 <p style="margin-bottom: 10px;" data-i18n="man_p1">Натисни 'ЗАПУСК'.</p>
 
                 <h3 style="color:#4ade80; margin-top: 10px;" data-i18n="man_h2">📍 2. МАРШРУТ / МАПА</h3>
-                <p style="margin-bottom: 10px;" data-i18n="man_p2"><strong>Як поставити ціль:</strong> Двічі швидко тапни по карті. З'явиться лінія маршруту.<br><strong>Кнопка 'Я ТУТ (БЕЗ GPS)':</strong> Використовуй, коли працює РЕБ. Натисни її, а потім ткни пальцем у карту туди, де ти зараз знаходишся.<br><strong>Кнопка '15м':</strong> Натисни її і пройди прямо 15 метрів для точного калібрування компаса.</p>
+                <p style="margin-bottom: 10px;" data-i18n="man_p2"><strong>Як поставити ціль:</strong> Двічі швидко тапни по карті. З'явиться лінія маршруту.<br><strong>Кнопка 'Я ТУТ (БЕЗ GPS)':</strong> Використовуй, коли працює РЕБ. Натисни її, а потім ткни пальцем у карту туди, де ти зараз знаходишся.<br><strong>Закачати зону:</strong> Зберігає сектор для офлайну (видаляючи старий кеш).</p>
 
                 <h3 style="color:#0cf;" data-i18n="man_h3">🧭 3. КОМПАС / ПОВОДИР</h3>
-                <p style="margin-bottom: 10px;" data-i18n="man_p3"><strong>Режим крокоміра:</strong> Якщо немає GPS, увімкніть крокомір і поклади телефон у кишеню. Він сам рахуватиме кроки.<br><strong>Поводир (Вібро/Голос):</strong> Коли йдеш, телефон підказує відхилення вліво/вправо та відстань.<br><strong>ЕКО-Блекаут:</strong> Гасить екран. Щоб подивитися відстань, поклади палець на екран на 3 сек.</p>
+                <p style="margin-bottom: 10px;" data-i18n="man_p3"><strong>Крокомір:</strong> Якщо немає GPS, увімкни його і він сам рахуватиме кроки.<br><strong>Поводир:</strong> Підказує напрямок голосом і вібрацією.<br><strong>ЕКО-Блекаут:</strong> Гасить екран (телефон не вимкнеться). Тапни по екрану на 3 сек, щоб дізнатися відстань.</p>
 
                 <h3 style="color:#f1c40f;" data-i18n="man_h4">🌌 4. АСТРО / БЕЗ GPS</h3>
                 <p style="margin-bottom: 10px;" data-i18n="man_p4">Коли компас збився через РЕБ: Тримаєш телефон рівно -> тиснеш 'КАЛІБРУВАТИ ГОРИЗОНТ' -> піднімаєш у небо. Наведись на Полярну зірку або Сонце (прямо у снайперське перехрестя) і натисни відповідну кнопку.</p>
